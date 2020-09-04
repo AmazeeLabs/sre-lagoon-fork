@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  ui:
+    build:
+      context: services/ui
+      dockerfile: Dockerfile
+      args:
+        LAGOON_GIT_BRANCH: master
+    command: yarn run dev
+    volumes:
+      - ./services/ui/src:/app/services/ui/src
+      - ./services/ui/.env.defaults:/app/services/ui/.env.defaults
+      - ./services/ui/.env.schema:/app/services/ui/.env.schema
+      - ./services/ui/package.json:/app/services/ui/package.json
+    ports:
+      - '8888:3000'
+    labels:
+      lagoon.type: custom
+      lagoon.template: services/ui/.lagoon.app.yml
