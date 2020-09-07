@@ -258,6 +258,7 @@ const Problems = ({ problems }) => {
               font-size: 1em;
               width: 100%;
               white-space: pre-wrap;
+              overflow-wrap: break-word;
             }
 
             .row-heading {
