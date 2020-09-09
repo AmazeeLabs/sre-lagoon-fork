@@ -110,6 +110,8 @@ const Problems = ({ problems }) => {
             </div>
             <style jsx>{`
               .header {
+                margin: 10px 0px;
+                padding: 10px 0px;
                 @media ${bp.wideUp} {
                   align-items: center;
                   display: flex;

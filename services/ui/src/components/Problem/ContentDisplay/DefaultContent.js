@@ -92,6 +92,7 @@ const DefaultDisplay = ({ problem }) => {
                       font-size: 1em;
                       width: 100%;
                       white-space: pre-wrap;
+                      overflow-y: scroll;
                     }
                     .row-heading {
                       cursor: pointer;
