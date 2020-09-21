@@ -12,7 +12,7 @@ const Problem = ({ problem, display }) => {
         source: problem.source,
         created: fromNowDate,
         severityScore: problem.severityScore,
-        associatedPackage: problem.associatedPackage
+        associatedPackage: problem.version ? `${problem.associatedPackage}:${problem.version}` : problem.associatedPackage
     };
 
     return (
