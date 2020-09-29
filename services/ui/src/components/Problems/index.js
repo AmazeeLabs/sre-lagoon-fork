@@ -103,7 +103,13 @@ const Problems = ({ problems }) => {
                 </button>
             </div>
             <div className="problems-container">
-                {!sortedItems.filter(item => filterResults(item)) && <div className="data-none">No Problems</div>}
+                {sortedItems.filter(item => filterResults(item)).length == 0 &&
+                  <div className="data-table">
+                    <div className="data-none">
+                      No Problems
+                    </div>
+                  </div>
+                }
                 {sortedItems.filter(item => filterResults(item)).map((problem) => {
                     return <Problem key={`${problem.identifier}-${problem.id}`} problem={problem}/>
                 })}
@@ -162,6 +168,7 @@ const Problems = ({ problems }) => {
                 border: none;
                 padding: 10px 20px;
                 margin: 0;
+                font-style: italic;
               }
 
               .button-sort {
@@ -197,16 +204,22 @@ const Problems = ({ problems }) => {
                   justify-content: space-between;
                   padding: 10px 20px;
                   margin: 0 0 20px;
-                  background: #f3f3f3;
+                  background: ${color.lightestGrey};
 
                   li.result {
                     display: flex;
                     flex-direction: column;
                     margin: 0;
+                    padding: 0;
                   }
                 }
               }
 
+              .data-table {
+                background-color: ${color.white};
+                border: 1px solid ${color.lightestGrey};
+                border-radius: 3px;
+              }
               .data-none {
                 border: 1px solid ${color.white};
                 border-bottom: 1px solid ${color.lightestGrey};
